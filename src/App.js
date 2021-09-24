@@ -1,9 +1,11 @@
 import './App.css';
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import { collection, getDocs, getFirestore } from "firebase/firestore"; 
+import { Dashboard } from './components/dashboard/dashboard';
 
 function App() {
   const db = getFirestore();
+  const [data, setData] = useState(null);
 
   const getOffers = async () => {
     const groupsSnapshot = await getDocs(collection(db, "offerGroups"));
@@ -19,6 +21,7 @@ function App() {
       }
     });
     console.log(tableData);
+    setData(tableData);
   }
 
   useEffect(() => {
@@ -28,8 +31,14 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        
+      <div className="logo_container">
+        <div className="logo" />
+      </div>
       </header>
+      <h1 className="header_title">Наши цены</h1>
+      <div className="dashboard_wrapper">
+        <Dashboard tableData={data} />
+      </div>
     </div>
   );
 }
