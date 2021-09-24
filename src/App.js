@@ -2,8 +2,8 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { Dashboard } from "./components/dashboard/dashboard";
-import { Instagram, YouTube } from "@material-ui/icons";
-import IconButton from "@mui/material/IconButton";
+import { Instagram } from "@material-ui/icons";
+import { IconButton } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
