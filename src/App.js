@@ -4,15 +4,15 @@ import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { Dashboard } from "./components/dashboard/dashboard";
 import { Instagram, YouTube } from "@material-ui/icons";
 import IconButton from "@mui/material/IconButton";
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#d32e20"
-    }
-  }
-})
+      main: "#d32e20",
+    },
+  },
+});
 
 function App() {
   const db = getFirestore();
@@ -40,12 +40,13 @@ function App() {
   }, []);
 
   const handleInstPress = () => {
-    window.location.href = "https://instagram.com/alexeenkov_studiogarage?utm_medium=copy_link";
+    window.location.href =
+      "https://instagram.com/alexeenkov_studiogarage?utm_medium=copy_link";
   };
 
   const handleCall = () => {
-    window.open('tel:+375447513600');
-  }
+    window.open("tel:+375447513600");
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -53,10 +54,13 @@ function App() {
         <header className="App-header">
           <div className="logo" />
           <div className="contact">
-            <div onClick={handleCall} className="contact_text underline">+375 44 751 36 00</div>
+            <div onClick={handleCall} className="contact_text underline">
+              +375 44 751 36 00
+            </div>
+            <div className="contact_text">ул. Белыницкого-Бирули 123/45</div>
           </div>
-          <div className="contact_text">ул. Белыницкого-Бирули 123/45</div>
-          <div style={{ display: "flex", flexDirection: "row" }}>
+
+          <div id="instagram_anim">
             <IconButton color="primary" onClick={handleInstPress}>
               <Instagram style={{ width: 70, height: 70 }} />
             </IconButton>
@@ -67,7 +71,15 @@ function App() {
           <Dashboard tableData={data} />
         </div>
       </div>
-      <div className="bottom">УНП 123 123 123</div>
+      <div className="bottom">
+        <div className="contact">
+          <div onClick={handleCall} className="contact_text underline">
+            +375 44 751 36 00
+          </div>
+          <div className="contact_text">ул. Белыницкого-Бирули 123/45</div>
+        </div>
+        УНП 123 123 123
+      </div>
     </ThemeProvider>
   );
 }
