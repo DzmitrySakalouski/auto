@@ -18,7 +18,7 @@
     text-decoration: underline;
     font-weight: bold;
     margin-bottom: 16px;
-    margin-top: 16px;
+    margin-top: 20px;
     font-size: 20px;
 }
 
@@ -30,10 +30,33 @@
     border-bottom: .1px solid white;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 9px;
 }
 
 .offer_price {
-    font-size: 17px;
+    font-size: 18px;
     width: 50%;
     text-align: right;
 }
+
+@media only screen and (max-width: 600px) {
+    .dashboard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 0;
+    }
+
+    .dashboard_container {
+        text-align: left;
+        max-width: 80%;
+    }
+
+    .dashboard_container p {
+        text-align: center;
+    }
+
+    .dashboard_off {
+        margin-bottom: 50px;
+    }
+  }

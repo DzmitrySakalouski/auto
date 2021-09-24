@@ -28,7 +28,7 @@ export const Dashboard = props => {
         <div className="dashboard">
             <div className="dashboard_container">
                 {getLeftData().map(item => 
-                    <div key={item.id}>
+                    <div className="dashboard_off" key={item.id}>
                         <p>{item.displayName}</p>
                         {
                             item.offers.map(offer => (
@@ -41,9 +41,9 @@ export const Dashboard = props => {
                     </div>
                 )}
             </div>
-            <div  className="dashboard_container">
+            <div className="dashboard_container">
                 {getRightData().map(item => 
-                    <div>
+                    <div className="dashboard_off">
                         <p>{item.displayName}</p>
                         {
                             item.offers.map(offer => (
